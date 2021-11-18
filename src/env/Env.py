@@ -40,6 +40,7 @@ class Env:
             env_capture = np.frombuffer(s, dtype=np.uint8).reshape((size.height(), size.width(), img.depth() // 8))
 
             env_capture = self.person.see(env_capture)
+
             cv2.imshow(self.person.name, env_capture)
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 cv2.destroyAllWindows()
